@@ -1,8 +1,11 @@
 CC = gcc
 CFLAGS += -g -Wall
 
+all: server client
 server: server.c
 	$(CC) $(CFLAGS) $^ -o $@
-all: server
+client: client.c
+	$(CC) $(CFLAGS) $^ -o $@
+
 clean:
-	$(RM) server
+	$(RM) server client
