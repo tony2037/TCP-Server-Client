@@ -1,8 +1,13 @@
-#include <netdb.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
+#include <netdb.h>
 #include <sys/socket.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
 #define MAX 256
 #define PORT 8080
 #define SA struct sockaddr
@@ -29,8 +34,9 @@ void func(int sockfd)
 
 int main()
 {
-    int sockfd, connfd;
-    struct sockaddr_in servaddr, cli;
+    int sockfd;
+
+    struct sockaddr_in servaddr;
 
     // socket create and varification
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
