@@ -11,6 +11,7 @@
 
 #define MAX 256
 #define PORT 8080
+#define ADDR "127.0.0.1"
 #define SA struct sockaddr
 void func(int sockfd)
 {
@@ -50,7 +51,7 @@ int main()
 
     // assign IP, PORT
     servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");  // means local
+    servaddr.sin_addr.s_addr = inet_addr(ADDR);  // means local
     servaddr.sin_port = htons(PORT);
 
     // connect the client socket to server socket
